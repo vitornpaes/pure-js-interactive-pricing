@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+:root {
+  --SoftCyan: hsl(174, 77%, 80%); /* --Full Slider Bar-- */
+  --StrongCyan: hsl(174, 86%, 45%); /* --Slider Backround-- */
+  --LightGrayishRed: hsl(14, 92%, 95%); /* --Discount Background-- */
+  --LightRed: hsl(15, 100%, 70%); /* --Discount Text-- */
+  --PaleBlue: hsl(226, 100%, 87%); /* --CTA Text-- */
+  --White: hsl (0, 0%, 100%); /* --Pricing Component Background-- */
+  --VeryPaleBlue: hsl(230, 100%, 99%); /* --Main Background-- */
+  --LightGrayishBlue1: hsl(224, 65%, 95%); /* --Full Slider Bar-- */
+  --LightGrayishBlue2: hsl(223, 50%, 87%); /* --Toggle Background-- */
+  --GrayishBlue: hsl(225, 20%, 60%); /* --Text-- */
+  --DarkDesaturatedBlue: hsl(227, 35%, 25%); /* --Text & CTA Background-- */
+}
+
+* {
+  font-family: "Manrope", sans-serif;
+  color: var(--GrayishBlue);
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(images/bg-pattern.svg) var(--VeryPaleBlue) no-repeat;
+  background-position: top;
+  background-size: 100% 200px;
+}
+
+header {
+  background: url(images/pattern-circles.svg) no-repeat;
+  background-position: center;
+  text-align: center;
+  font-size: 15px;
+  color: var(--DarkDesaturatedBlue);
+  margin: 16px auto;
+  padding: 40px;
+}
+
+header h1 {
+  color: black;
+  font-weight: bold;
+}
+
+header p {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+main {
+  background-color: rgb(255, 255, 255);
+  border-radius: 24px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.089);
+  padding: 18px;
+}
+
+.input-wrapper {
+  margin: 26px;
+}
+
+.input-wrapper .price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+  padding: 8px;
+  font-size: 17px;
+}
+
+.input-wrapper .price-row .value-input {
+  position: relative;
+  bottom: 16px;
+}
+
+.input-wrapper .price-row .word2 {
+  font-size: 36px;
+  font-weight: bolder;
+  color: black;
+}
+.range-input {
+  margin-bottom: 40px;
+}
+
+.range-input input[type="range"] {
+  display: flex;
+  width: 100%;
+  -webkit-appearance: none;
+  height: 8px;
+  background: var(--LightGrayishBlue1);
+  border-radius: 20px;
+}
+
+.range-input input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background: var(--StrongCyan) url(images/icon-slider.svg) no-repeat center;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px var(--StrongCyan);
+}
+
+.input-wrapper .check-row {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 12px;
+}
+
+.input-wrapper .check-row .discount {
+  background: var(--LightGrayishRed);
+  color: var(--LightRed);
+  padding: 6px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* -- Switch -- */
+.switch {
+  display: none;
+}
+.switch + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.switch--shadow + label {
+  padding: 2px;
+  width: 48px;
+  height: 26px;
+  background-color: #dddddd;
+  border-radius: 60px;
+}
+
+.switch--shadow + label:before,
+.switch--shadow + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+
+.switch--shadow + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 60px;
+  transition: all 0.4s;
+}
+
+.switch--shadow + label:after {
+  width: 20px;
+  height: 20px;
+  top: 3px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+
+.switch--shadow:checked + label:before {
+  background-color: var(--StrongCyan);
+}
+.switch--shadow:checked + label:after {
+  transform: translateX(22px);
+}
+/* -- END -- */
+
+.trial-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px;
+}
+
+.trial-wrapper li {
+  padding-bottom: 6px;
+}
+
+.trial-wrapper ul li::marker {
+  content: url(images/icon-check.svg) " ";
+}
+
+.trial-wrapper button {
+  background: var(--DarkDesaturatedBlue);
+  color: white;
+  height: 35px;
+  width: 145px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.trial-wrapper a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (min-width: 960px) {
+  body {
+    background-size: 100% 400px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+  }
+}

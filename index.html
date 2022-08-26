@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. No credit card required</p>
+    </header>
+
+    <main>
+      <div class="input-wrapper">
+        <div class="price-row">
+          <div>
+            <span id="value1">100k</span>
+            <span>Pageviews</span>
+          </div>
+          <div class="value-input">
+            <span class="word2" id="value2">$16.00 </span>
+            <span id="word3">/month</span>
+          </div>
+        </div>
+
+        <div class="range-input">
+          <input
+            type="range"
+            name="range"
+            id="range"
+            list="range-list"
+            value="16"
+            min="8"
+            max="36"
+            step="4"
+            oninput="calculateValues()"
+          />
+        </div>
+        <div class="check-row">
+          <span>Monthly Billing</span>
+          <div class="switch_container">
+            <input
+              id="switch-shadow"
+              class="switch switch--shadow"
+              type="checkbox"
+              oninput="calculateValues()"
+            />
+            <label for="switch-shadow"></label>
+          </div>
+          <p>Yearly Billing</p>
+          <div class="discount">25% discount</div>
+        </div>
+      </div>
+      <hr />
+      <div class="trial-wrapper">
+        <ul>
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ul>
+        <button onclick="StartTrial()">Start my trial</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
